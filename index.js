@@ -1,11 +1,20 @@
-const box = document.querySelector(".box");
-let isShow = true;
+// version number = 0.0.1
 
-setInterval(function () {
-  isShow = !isShow;
-  box.style.display = isShow ? "block" : "none";
-}, 500);
+const toggleItem = document.querySelectorAll(".toggle");
 
-const button = document.createElement("button");
-button.innerText = "click me";
-document.body.appendChild(button);
+const toggleFn = (item, interval) => {
+  console.log(interval);
+  let isShow = true;
+
+  setInterval(function () {
+    isShow = !isShow;
+    item.style.display = isShow ? "block" : "none";
+  }, interval);
+};
+
+toggleItem.forEach((item) => {
+  const dataInterval = parseInt(item.getAttribute("data-interval"));
+  if (dataInterval && dataInterval > 0) {
+    toggleFn(item, dataInterval);
+  }
+});
