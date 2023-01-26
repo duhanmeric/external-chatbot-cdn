@@ -7,4 +7,5 @@ setInterval(function () {
 }, 500);
 
 const button = document.createElement("button");
+button.innerText = "click me";
 document.body.appendChild(button);
