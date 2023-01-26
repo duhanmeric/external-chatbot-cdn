@@ -4,4 +4,7 @@ let isShow = true;
 setInterval(function () {
   isShow = !isShow;
   box.style.display = isShow ? "block" : "none";
-}, 1000);
+}, 500);
+
+const button = document.createElement("button");
+document.body.appendChild(button);
